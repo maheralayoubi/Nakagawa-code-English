@@ -901,71 +901,7 @@ Restoration Assistance</a>-->
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script>
-$(document).ready(function() {
-			// grab the initial top offset of the navigation
-		   	var stickyNavTop = $('.main-navbar-fixed').offset().top;
 
-		   	// our function that decides weather the navigation bar should have "fixed" css position or not.
-		   	var stickyNav = function(){
-			    var scrollTop = $(window).scrollTop(); // our current vertical position from the top
-
-			    // if we've scrolled more than the navigation, change its position to fixed to stick to top,
-			    // otherwise change it back to relative
-			    if (scrollTop > stickyNavTop) {
-			        $('.main-navbar-fixed').addClass('sticky');
-			    } else {
-			        $('.main-navbar-fixed').removeClass('sticky');
-			    }
-			};
-
-			stickyNav();
-			// and run it again every time you scroll
-			$(window).scroll(function() {
-				stickyNav();
-			});
-
-var hideTimeout = null;
-
-var show = function() {
-  $('#main-navbar-fixed').hide();
-}
-
-var hide = function() {
-  $('#main-navbar-fixed').show();
-}
-
-$(document).ready(function(){
-
-  $(window).scroll(function(e){
-    if (hideTimeout) {
-        window.clearTimeout(hideTimeout);
-      hideTimeout = null;
-    }
-    show();
-
-    window.setTimeout(hide, 1000);
-  });
-
-});
-		});
-		// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-
-// When the user clicks anywhere outside of the modal, close it
-var modal = document.getElementById('ticketModal');
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
 </script>
 
 
